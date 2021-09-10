@@ -1,14 +1,12 @@
 ﻿using EntityLayer.Abstract;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace EntityLayer.Concrete
 {
     public class Contact : ITable
     {
+        [Key]
         public int ContactID { get; set; }
         public string ContactUserName { get; set; }
         public string ContactMail { get; set; }

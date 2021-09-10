@@ -1,9 +1,11 @@
 ﻿using EntityLayer.Abstract;
+using System.ComponentModel.DataAnnotations;
 
 namespace EntityLayer.Concrete
 {
     public class Writer : ITable
     {
+        [Key]
         public int WriterID { get; set; }
         public string WriterName { get; set; }
         public string WriterAbout { get; set; }
