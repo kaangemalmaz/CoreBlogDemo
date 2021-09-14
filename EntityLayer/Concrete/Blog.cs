@@ -1,5 +1,6 @@
 ﻿using EntityLayer.Abstract;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace EntityLayer.Concrete
@@ -14,5 +15,11 @@ namespace EntityLayer.Concrete
         public string BlogImage { get; set; }
         public DateTime BlogCreateDate { get; set; }
         public bool BlogStatus { get; set; }
+
+        public int CategoryID { get; set; }
+        public Category Category { get; set; }
+
+        public List<Comment> Comments { get; set; }
+
     }
 }
