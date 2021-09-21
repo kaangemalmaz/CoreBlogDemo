@@ -1,4 +1,5 @@
-﻿using CoreDemo.Models;
+﻿using BusinessLayer.Abstract;
+using CoreDemo.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
@@ -8,15 +9,18 @@ namespace CoreDemo.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        IBlogService _blogService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IBlogService blogService)
         {
             _logger = logger;
+            _blogService = blogService;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var blogs = _blogService.GetAllBlogs();
+            return View(blogs);
         }
 
         public IActionResult Privacy()

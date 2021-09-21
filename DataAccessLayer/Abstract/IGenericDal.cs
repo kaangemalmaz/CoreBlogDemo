@@ -4,10 +4,10 @@ namespace DataAccessLayer.Abstract
 {
     public interface IGenericDal<T> where T:class
     {
-        List<T> ListAllCategory();
-        T GetByIdCategory(int id);
-        void AddCategory(T entity);
-        void UpdateCategory(T entity);
-        void DeleteCategory(T entity);
+        List<T> GetAll();
+        T GetById(int id);
+        void Add(T entity);
+        void Update(T entity);
+        void Delete(T entity);
     }
 }
