@@ -19,7 +19,7 @@ namespace CoreDemo.Controllers
 
         public IActionResult Index()
         {
-            var blogs = _blogService.GetAllBlogs();
+            var blogs = _blogService.GetListWithCategory();
             return View(blogs);
         }
 

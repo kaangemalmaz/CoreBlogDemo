@@ -14,5 +14,6 @@ namespace BusinessLayer.Abstract
         void AddBlog(Blog blog);
         void UpdateBlog(Blog blog);
         void DeleteBlog(Blog blog);
+        List<Blog> GetListWithCategory();
     }
 }
