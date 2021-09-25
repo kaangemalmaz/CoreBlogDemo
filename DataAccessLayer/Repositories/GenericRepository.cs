@@ -1,7 +1,9 @@
 ﻿using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 
 namespace DataAccessLayer.Repositories
 {
@@ -19,16 +21,18 @@ namespace DataAccessLayer.Repositories
             context.Set<T>().Remove(entity);
         }
 
-        public T GetById(int id)
+        public T GetById(Expression<Func<T, bool>> filter)
         {
             using Context context = new Context();
-            return context.Set<T>().Find(id);
+            return context.Set<T>().SingleOrDefault(filter);
         }
 
-        public List<T> GetAll()
+        public List<T> GetAll(Expression<Func<T, bool>> filter = null) 
         {
             using Context context = new Context();
-            return context.Set<T>().ToList();
+            return filter == null 
+                ? context.Set<T>().ToList()
+                : context.Set<T>().Where(filter).ToList();
         }
 
         public void Update(T entity)

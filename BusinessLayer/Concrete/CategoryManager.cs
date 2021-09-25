@@ -26,7 +26,7 @@ namespace BusinessLayer.Concrete
 
         public Category GetByIdCategory(int id)
         {
-            return _categoryDal.GetById(id);
+            return _categoryDal.GetById(i=> i.CategoryID == id);
         }
 
         public List<Category> ListAllCategory()

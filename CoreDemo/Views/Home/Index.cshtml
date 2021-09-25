@@ -21,7 +21,7 @@
                                 <ul class="blog-icons my-4">
                                     <li>
                                         <a href="~/web/#">
-                                            <i class="far fa-calendar-alt"></i> @blog.BlogCreateDate
+                                            <i class="far fa-calendar-alt"></i> @(((DateTime)blog.BlogCreateDate).ToString("dd-MMMM-yyyy"))
                                         </a>
                                     </li>
                                     <li class="mx-2">
@@ -31,16 +31,16 @@
                                     </li>
                                     <li>
                                         <a href="~/web/#">
-                                            <i class="fas fa-eye"></i> @blog.CategoryID
+                                            <i class="fas fa-eye"></i> @blog.Category.CategoryName
                                         </a>
                                     </li>
 
                                 </ul>
                                 <h5 class="card-title">
-                                    <a href="~/web/single.html">@blog.BlogTitle</a>
+                                    <a asp-controller="Blog" asp-action="BlogDetail" asp-route-id ="@blog.BlogID">@blog.BlogTitle</a>
                                 </h5>
-                                <p class="card-text mb-3">@blog.BlogContent </p>
-                                <a href="~/web/single.html" class="btn btn-primary read-m">Devamını Oku</a>
+                                <p class="card-text mb-3">@blog.BlogContent.Substring(0, blog.BlogContent.Substring(0,130).LastIndexOf(" ")) </p>
+                                <a asp-controller="Blog" asp-action="BlogDetail" asp-route-id ="@blog.BlogID" class="btn btn-primary read-m">Devamını Oku</a>
                             </div>
                         </div>
                     }
