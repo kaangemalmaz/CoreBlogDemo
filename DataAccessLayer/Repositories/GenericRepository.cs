@@ -13,12 +13,14 @@ namespace DataAccessLayer.Repositories
         {
             using Context context = new Context();
             context.Set<T>().Add(entity);
+            context.SaveChanges();
         }
 
         public void Delete(T entity)
         {
             using Context context = new Context();
             context.Set<T>().Remove(entity);
+            context.SaveChanges();
         }
 
         public T GetById(Expression<Func<T, bool>> filter)
@@ -39,6 +41,7 @@ namespace DataAccessLayer.Repositories
         {
             using Context context = new Context();
             context.Set<T>().Update(entity);
+            context.SaveChanges();
         }
     }
 }

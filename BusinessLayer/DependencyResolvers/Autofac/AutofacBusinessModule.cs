@@ -22,6 +22,8 @@ namespace BusinessLayer.DependencyResolvers.Autofac
             builder.RegisterType<CategoryManager>().As<ICategoryService>().SingleInstance();
             builder.RegisterType<BlogManager>().As<IBlogService>().SingleInstance();
             builder.RegisterType<CommentManager>().As<ICommentService>().SingleInstance();
+            builder.RegisterType<WriterManager>().As<IWriterService>().SingleInstance();
+
         }
     }
 }
