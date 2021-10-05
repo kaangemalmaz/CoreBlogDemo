@@ -17,12 +17,16 @@ namespace BusinessLayer.DependencyResolvers.Autofac
             builder.RegisterType<EfCommentDal>().As<ICommentDal>().SingleInstance();
             builder.RegisterType<EfContactDal>().As<IContactDal>().SingleInstance();
             builder.RegisterType<EfWriterDal>().As<IWriterDal>().SingleInstance();
+            builder.RegisterType<EfNewsLetterDal>().As<INewsLetterDal>().SingleInstance();
 
             // business resolver.
             builder.RegisterType<CategoryManager>().As<ICategoryService>().SingleInstance();
             builder.RegisterType<BlogManager>().As<IBlogService>().SingleInstance();
             builder.RegisterType<CommentManager>().As<ICommentService>().SingleInstance();
             builder.RegisterType<WriterManager>().As<IWriterService>().SingleInstance();
+            builder.RegisterType<NewsLetterManager>().As<INewsLetterService>().SingleInstance();
+            builder.RegisterType<AboutManager>().As<IAboutService>().SingleInstance();
+            builder.RegisterType<ContactManager>().As<IContactService>().SingleInstance();
 
         }
     }
