@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace CoreDemo.Controllers
 {
-    public class LoginController : Controller
+    public class ErrorPageController : Controller
     {
-        [HttpGet]
-        public IActionResult Index()
+        public IActionResult ErrorPage()
         {
             return View();
         }
