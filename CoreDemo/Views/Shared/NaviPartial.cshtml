@@ -9,36 +9,24 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="~/web/index.html">
-                        Home
+                    <a class="nav-link" asp-action="Index" asp-controller="Home">
+                        Anasayfa
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" asp-controller="About" asp-action="Index">About</a>
-                </li>
-                <li class="nav-item dropdown active">
-                    <a class="nav-link dropdown-toggle" href="~/web/#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                       aria-expanded="false">
-                        Features
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="~/web/#"></a>
-                        <a class="dropdown-item" href="~/web/blog1.html">Standard Blog</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="~/web/blog2.html">2 Column Blog</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="~/web/blog3.html">3 Column Blog</a>
-
-                    </div>
+                    <a class="nav-link" asp-controller="About" asp-action="Index">Hakkımızda</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" asp-controller="Contact" asp-action="Index">Contact</a>
+                    <a class="nav-link" asp-controller="Blog" asp-action="Index">Bloglar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Contact" asp-action="Index">İletişim</a>
                 </li>
 
             </ul>
             <form action="#" method="post" class="form-inline my-2 my-lg-0 header-search">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search here..." name="Search" required="">
+                <input class="form-control mr-sm-2" type="search" placeholder="Aranacak Kelime..." name="Search" required="">
                 <button class="btn btn1 my-2 my-sm-0" type="submit">
                     <i class="fas fa-search"></i>
                 </button>

@@ -58,9 +58,11 @@
             <!--right-->
             <aside class="col-lg-4 agileits-w3ls-right-blog-con text-right">
                 <div class="right-blog-info text-left">
+
+                    <h4>Mail bültenine abone olun</h4>
                     @await Html.PartialAsync("~/Views/NewsLetter/SubscribeMail.cshtml")
-                    @await Component.InvokeAsync("CategoryList") 
-                    @await Component.InvokeAsync("LastTherePostByTheWriter", Model.WriterId) 
+                    @await Component.InvokeAsync("CategoryList")
+                    @await Component.InvokeAsync("LastTherePostByTheWriter", Model.WriterId)
                     <div class="single-gd my-5 tech-btm">
                         <h4>Our Progress</h4>
                         <div class="progress">
