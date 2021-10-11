@@ -1,6 +1,7 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
+using System.Collections.Generic;
 
 namespace BusinessLayer.Concrete
 {
@@ -16,6 +17,11 @@ namespace BusinessLayer.Concrete
         public void AddWriter(Writer writer)
         {
             _writerDal.Add(writer);
+        }
+
+        public List<Writer> ListAllWriter()
+        {
+            return _writerDal.GetAll();
         }
     }
 }
